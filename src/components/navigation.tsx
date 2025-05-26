@@ -31,7 +31,7 @@ export default function Navigation({ children }: { children: React.ReactNode; })
 
                             <div className="fixed bottom-20 sm:bottom-32 left-4 sm:left-8 flex flex-col items-start justify-center gap-4">
                                 <MobileLink href="/blog">                                    
-                                    Éxperience
+                                    Expérience
                                 </MobileLink>
 
                                 <MobileLink href="/about">                                
