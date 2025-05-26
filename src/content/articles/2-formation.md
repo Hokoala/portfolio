@@ -1,7 +1,7 @@
 ---
 isDraft: false
 title: Parcours scolaire
-snippet: Voici Mes Etudes 
+snippet: Voie Scolaire
 slug: Formation
 author: Jean Michel Le
 category: Scolaire
