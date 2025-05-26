@@ -1,0 +1,194 @@
+/* Polices personnalisées */
+@font-face {
+    font-family: 'LEMON-MILK';
+    src: url('font/lemon_milk/LEMONMILK-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LEMON-MILK Bold';
+    src: url('font/lemon_milk/LEMONMILK-Bold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cocogoose-regular';
+    src: url('font/cocogoose/Cocogoose-Pro-Regular-trial.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cocogoose-bold';
+    src: url('font/cocogoose/Cocogoose-Pro-Bold-trial.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Humane';
+    src: url('font/humane/Humane-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'nudicamedium';
+    src: url('/font/Webfont%20Kit/nudica-medium-webfont.eot');
+    src: url('/font/Webfont%20Kit/nudica-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/font/Webfont%20Kit/nudica-medium-webfont.woff2') format('woff2'),
+         url('/font/Webfont%20Kit/nudica-medium-webfont.woff') format('woff'),
+         url('/font/Webfont%20Kit/nudica-medium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'nudicamedium', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    background-image: url(/image/noise.png);
+    background-size: 200px;
+    cursor: none;
+}
+
+
+
+
+
+#logo h1 {
+    font-family: 'nudicamedium', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: white;
+}
+
+nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    padding: 10px;
+    color: #3498DB;
+}
+
+li a {
+    text-decoration: none;
+    font-family: 'nudicamedium', sans-serif;
+    font-size: 15px;
+    color: white;
+    transition: background-color 0.3s, backdrop-filter 0.3s;
+}
+
+li a:hover {
+    color: rgba(0, 0, 255, 0.5);
+}
+
+
+
+.titre-semestre1 p{
+    color: #FFFFFF;
+    font-size: 5em;
+}
+
+
+
+.R112 {
+    flex: 1; /* Fait en sorte que chaque élément ait la même largeur */
+    background-color: rgba(93, 93, 105, 0.2);
+    transition: background-color 0.3s ease; /* Transition fluide pour la couleur de fond */
+    margin: 0 3px;
+}
+
+.R112 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 2.1em;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.R112 a:hover {
+    background-color: rgba(0, 0, 255, 0.5); /* Couleur de fond au survol */
+}
+
+
+
+
+
+
+.cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #FFFFFF;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid hsla(0, 0%, 100%, 0.5);
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.footer{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer1{
+color: #FFFFFF;
+}
+
+i{
+    color: #FFFFFF;
+    width: 10px;
+}
+
+
+#reseau-sociaux{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 10px;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #111111;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #111111;
+}

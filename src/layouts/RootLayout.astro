@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component";
+
+const { title, description } = Astro.props;
+
+const defaultTitle = "Portfolio – Jean Michel LE";
+const defaultDescription =
+  "Portfolio de Jean Michel LE, designer et développeur web passionné par la création d'expériences utilisateur exceptionnelles. Découvrez mes projets, compétences et ma vision du design moderne.";
+const siteURL = "https://portfolio-astro.vercel.app"; // Remplace si tu ajoutes un domaine personnalisé
+const socialImage = "/social-image.jpg"; // À placer dans le dossier `public`
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title ?? defaultTitle}</title>
+    <meta name="description" content={description ?? defaultDescription} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content={siteURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={defaultTitle} />
+    <meta property="og:description" content={defaultDescription} />
+    <meta property="og:image" content={socialImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="portfolio-astro.vercel.app" />
+    <meta name="twitter:url" content={siteURL} />
+    <meta name="twitter:title" content={defaultTitle} />
+    <meta name="twitter:description" content={defaultDescription} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <Font cssVariable="--font-geist" preload />
+    <ClientRouter />
+    <LoadingIndicator color="#f4f4f5" height="2px" />
+  </head>
+
+  <body class="font-sans min-h-screen bg-zinc-900">
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

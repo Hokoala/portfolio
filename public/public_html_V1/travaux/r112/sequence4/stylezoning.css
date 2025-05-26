@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
+body
+{
+  background: #EEEEEE;
+  font-family: 'Sintony', sans-serif;
+}
+
+#zonecentrale
+{
+	width: 900px;
+    margin: auto;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+#nom{
+    display: inline-block;
+    font-family: 'Damion', cursive;
+    font-size: 35px;
+}
+#text-étudiant{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+header
+{
+    position: relative;
+}
+
+
+#titre_principal
+{
+    width: 292px;
+	height: 100px;
+    display: inline-block;
+    position : relative;
+	
+}
+
+
+nav
+{
+    display: inline-block;
+    position : absolute;
+    width : 586px;
+    height: 100px;
+    font-size: 25px;
+
+        
+}
+nav ul{
+    position: absolute;
+    right: 0;
+    top: 42px;
+}
+
+nav li{
+    display: inline-block;
+    
+
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    margin: 3px;
+    
+}
+
+nav a:hover{
+    border-bottom: 3px solid #77221f;
+    color: #77221f;
+}
+
+
+#banniere_image
+{
+    
+    height: 200px;
+    width: 900 px;
+	background-color:#E59;
+    margin-bottom: 12px;
+    background-image:url(images/batiment.jpg);
+    border-radius: 10px ;
+    position: relative;
+    
+	
+}
+
+#banniere_description
+{
+    height: 50px;
+    width: 900px;
+    position: relative; 
+    top: 150px; 
+    bottom: 0px;
+    background-color: rgba(24,24,24,0.8);
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    
+}
+
+#banniere_description p{
+    padding: 15px;
+
+}
+
+
+
+
+article
+{
+	
+    display: inline-block;
+    width: 596px;
+    height: 500px;
+    margin-right: 12px;
+    border-radius: 10px;
+   
+
+    
+   
+}
+article p {
+    text-align: justify;
+    
+
+}
+
+aside H2 {
+    text-align: left;
+    margin: 12px;
+}
+aside p{
+    text-align: center;
+    text-align: justify;
+    margin: 12px;
+}
+aside
+{
+    display: inline-block;
+    width: 292px;
+    height: 500px;
+    background-color: #706b65;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+    color: #EEEEEE;
+   
+ 
+}
+#images img{
+    margin-top: 15px;
+    margin-right: 6px;
+}
+
+
+#bulle{
+    position: relative;
+    top: -380px;
+    right: 150px;
+}
+
+
+footer
+{
+   position: relative; 
+    
+}
+
+
+
+
+
+#tweet
+{
+    display: inline-block;
+	background-color:#DDDDDD;
+    width: 292px;
+	height: 125px;
+    margin-right: 6px;
+    vertical-align: top;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+}
+#mes_photos
+{
+    display: inline-block;
+	background-color:#DDDDDD;
+    width: 292px;
+	height: 125px;
+    margin-right: 6px;
+    margin-left: 6px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+    
+    
+
+}
+#mes_photos h3{
+    margin-left: 6px;
+}
+
+#mes_photos img {
+    margin: 6px;
+    border: 1px solid black;
+
+}
+
+#mes_liens
+{
+    display: inline-block;
+	background-color:#d4d4d4;
+    width: 292px;
+	height: 125px;
+    margin-left: 6px;
+    vertical-align: top;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+
+}
+
+#mes_liens li{
+    font-size: 12px;
+    margin: 3px;
+
+}
+
+#mes_liens h3{
+    margin-left: 5px;
+
+}
+#mes_liens a{
+    color: rgb(228, 0, 0);
+    text-decoration: none;
+}
+
+

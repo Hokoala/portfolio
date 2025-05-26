@@ -1,0 +1,43 @@
+---
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+import { Icon } from "@iconify/react";
+---
+
+<InfoLayout>
+  <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen flex flex-col justify-between gap-32">
+    <div class="space-y-4 sm:space-y-12">
+      <div class="flex flex-col sm:flex-row items-start gap-8">
+        <div class="flex-1">
+          <H1>À Propos</H1>
+          <p class="text-xl xl:text-2xl text-zinc-500 text-balance mt-4">
+Bonjour, je suis Jean Michel LE, un designer et développeur web passionné par la création d'expériences utilisateur exceptionnelles. Étudiant en MMI Métiers du Multimédia et de l'Internet, je suis passionné de l'univers du webdesign.  </p>
+        </div>
+        <div>
+          <img
+          src="../assets/Portrait.jpg" alt="PHOTO DE JEAN MICHEL LE" 
+            class="w-80 h-auto object-cover border-2 border-zinc-600 shadow"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-2 text-base sm:text-lg">
+      <h2 class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500">Compétence</h2>
+
+      <div class="px-4 py-6 rounded-2xl border border-zinc-800 bg-gradient-to-r from-zinc-900 to-black/70 shadow-inner">
+        <ul class="text-zinc-400 flex flex-wrap gap-6 justify-start">
+          <li><Icon icon="logos:figma" width="50" height="50" title="Figma" client:only="react" /></li>
+          <li><Icon icon="simple-icons:astro" width="50" height="50" color="white" title="Astro.js" client:only="react" /></li>
+          <li><Icon icon="logos:vue" width="50" height="50" title="Vue.js" client:only="react" /></li>
+          <li><Icon icon="logos:nuxt-icon" width="50" height="50" title="Nuxt.js" client:only="react" /></li>
+          <li><Icon icon="logos:react" width="50" height="50" title="React" client:only="react" /></li>
+          <li> <Icon icon="simple-icons:prisma" width="50" height="50" color="white" title="Prisma" client:only="react" /></li>
+          <li><Icon icon="logos:adobe-illustrator" width="50" height="50" title="Illustrator" client:only="react" /></li>
+          <li><Icon icon="logos:adobe-photoshop" width="50" height="50" title="Photoshop" client:only="react" /></li>
+          <li><Icon icon="logos:adobe-premiere" width="50" height="50" title="Premiere pro" client:only="react" /></li>
+          <Icon icon="logos:adobe-after-effects" width="50" height="50" title="Adobe After Effects" client:only="react" />
+        </ul>
+      </div>
+  </div>
+</InfoLayout>

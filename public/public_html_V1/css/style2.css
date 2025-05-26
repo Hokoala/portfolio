@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'LEMON-MILK';
+    src: url('font/lemon_milk/LEMONMILK-Regular.otf') format('truetype');
+
+}
+@font-face {
+    font-family: 'LEMON-MILK Bold';
+    src: url('font/lemon_milk/LEMONMILK-Bold.otf') format('truetype');
+
+}
+body{
+    background-color:#FFFFFF;
+    font-family: 'LEMON-MILK';
+    margin: 20px;
+    padding: 0;
+}
+
+header {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    margin-right: 5px;
+
+    
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    padding: 10px;
+    color: #3498DB;
+}
+
+li a:hover{
+    color: #F56500;
+
+}
+.logo p{
+    display: inline-block;
+    font-size: 10px; 
+} 
+
+nav {
+    display: inline-flex;
+}
+nav a{
+    text-decoration: none;
+}
+
+
+.liens{
+    display: flex;
+    justify-content:center;
+}
+
+h1{
+    font-family: 'LEMON-MILK Bold';
+    font-size: 25px;
+}
+.sequence1{
+    display:inline-block;
+    width: 100px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    border-radius: 15px;
+}
+.sequence1 :hover{
+    color: #F56500;
+}
+.sequence1 a{
+    text-decoration: none;
+}
+
+
+.sequence2{
+    display:inline-block;
+    width: 100px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    border-radius: 15px;
+}
+.sequence2 :hover{
+    color: #F56500;
+}
+.sequence2 a{
+    text-decoration: none;
+}

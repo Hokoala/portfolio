@@ -1,0 +1,58 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	h1 { text-align: center; }
+	p {
+		height: 400px; margin: 30px;
+		padding: 10px; background: #A88;	text-align: center;
+		box-shadow: 8px 8px 12px #aaa;
+		border: solid #EEE 5px;
+		}
+	</style>
+
+	<link rel="stylesheet" href="/exemple1/animate.css">
+
+
+</head>
+<body>
+	
+	<h1 class="wow shake" data-wow-delay="0.5s" >demo Wow</h1>
+	
+	<p class="wow fadeInDown" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque sit deleniti officiis ex dignissimos, ad dolores delectus facilis sint ducimus inventore perferendis modi. Inventore neque est sit aperiam culpa accusantium.</p>
+
+	<p class="wow fadeInDownBig" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi error eveniet quasi quia atque minus odio culpa ipsam pariatur, sunt iusto ea excepturi alias sit, molestiae cupiditate voluptatum reprehenderit beatae.</p>
+	<p class="wow flipInY" data-wow-delay="0.5s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex impedit, consequuntur asperiores accusamus facilis fuga quos rerum ipsam sed reiciendis! Dolorum aut debitis obcaecati ullam autem cumque adipisci dicta. Omnis!</p>
+
+	<p class="wow bounceInUp" data-wow-delay="2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex impedit, consequuntur asperiores accusamus facilis fuga quos rerum ipsam sed reiciendis! Dolorum aut debitis obcaecati ullam autem cumque adipisci dicta. Omnis!</p>
+
+
+    <p class="wow slideInRight" data-wow-delay="1s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex impedit, consequuntur asperiores accusamus facilis fuga quos rerum ipsam sed reiciendis! Dolorum aut debitis obcaecati ullam autem cumque adipisci dicta. Omnis!</p>
+
+   <p class="wow bounceInUp" data-wow-delay="1x²s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex impedit, consequuntur asperiores accusamus facilis fuga quos rerum ipsam sed reiciendis! Dolorum aut debitis obcaecati ullam autem cumque adipisci dicta. Omnis!</p>
+
+
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/WOW.js"></script>
+<script type="text/javascript">
+</script>
+
+<script>
+	new WOW().init();
+	wow = new WOW(
+                      {
+                      boxClass:     'wow',      // default
+                      animateClass: 'animated', // default
+                      offset:       0,          // default
+                      mobile:       true,       // default
+                      live:         true        // default
+                    }
+                    )
+                    wow.init();
+	</script>
+
+
+</body>
+
+</html>

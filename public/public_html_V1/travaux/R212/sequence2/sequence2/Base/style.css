@@ -1,0 +1,208 @@
+/*------------------------------------*\
+    $Base / Version mobile
+\*------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	
+
+}
+
+a {
+	transition: all 0.1s ease-in;
+	text-decoration: none;
+}
+
+h6{
+	font-size: 20px;
+}
+/* En-tête */
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+header h1{
+	margin: 0;
+	padding: 8px;
+	font-family: "Permanent Marker", cursive;
+}
+nav{
+background-color: black;
+
+}
+#navigation-principale a:hover{
+	color: #006eff;
+}
+#navigation-principale a{
+	text-decoration: none;
+	display: block;
+	padding: 8px 0 0 8px;
+}
+#footer-inner section{
+	padding: 0 8px;
+}
+p.credit{
+	padding: 0 8px;
+}
+
+footer li a:hover{
+	color: #006eff;	
+}
+#footer-inner ul{
+	list-style: none;
+	padding: 0;
+}
+
+.article-infos h5,h6{
+	margin: 3px;
+}
+
+
+
+/* Aside */
+
+aside{
+	display: flex;
+	width: 30px;
+}
+#tri{
+display: block;
+
+}
+
+
+.tri-collection label {
+	text-transform: uppercase;
+	color: #666;
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+
+/* Articles */
+#produits{
+	display: flex;
+	flex-wrap: wrap;	
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+article{
+	width: 49%;
+}
+.article-image img {
+	max-width: 150px; /* Afin d'éviter les débordement des images */
+}
+
+
+/* Pied de page */
+footer,header,nav{
+	color: white;
+	background-color: black;
+}
+
+header a,footer a, nav a{
+	color: white;
+
+}
+
+
+/*------------------------------------*\
+    $Version Tablette
+\*------------------------------------*/
+
+@media screen and  (min-width: 480px){
+
+	#conteneur{
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+	header{
+		grid-column: 1/3;
+	}
+	#navigation-principale{
+		grid-column: 1/3;
+		display: flex;
+		justify-content: space-around;
+		
+	
+	}
+	#navigation-principale a{
+		font-size: 20px;
+		padding: 3px;
+	}
+	
+	.tri-collection select {
+		width: 150px;
+	}
+
+	footer{
+		grid-column:1/3 ;
+	}
+	#footer-inner{
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	#footer-inner ul{
+		list-style: none;
+		padding: 0;
+	}
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    $Version Desktop
+\*------------------------------------*/
+
+@media screen and  (min-width: 960px){
+	#conteneur{
+		grid-template-columns: 1fr 2fr 1fr;
+	}
+	header{
+		grid-column: 1/4;
+	}
+	#navigation-principale{
+		grid-column:1/2;
+		display: block;
+		justify-content: space-around;
+	
+
+	}
+
+	.tri-collection select {
+		width: 250px;
+	}
+	aside{
+		grid-column: 3/4;
+	}
+	#produits{
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+	footer{
+		grid-column:1/4; 
+	}
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Draggable - Puzzle Functionality</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $(".puzzle-piece").draggable();
+        });
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Interactive Puzzle</h1>
+    <div id="puzzle-container">
+        <img src="../draggable/images-puzzle/piece1.png" alt="Puzzle Piece 1" class="puzzle-piece piece1">
+        <img src="../draggable/images-puzzle/piece2.png" alt="Puzzle Piece 2" class="puzzle-piece piece2">
+        <img src="../draggable/images-puzzle/piece3.png" alt="Puzzle Piece 3" class="puzzle-piece piece3">
+        <img src="../draggable/images-puzzle/piece4.png" alt="Puzzle Piece 4" class="puzzle-piece piece4">
+        <img src="../draggable/images-puzzle/piece5.png" alt="Puzzle Piece 5" class="puzzle-piece piece5">
+        <img src="../draggable/images-puzzle/piece6.png" alt="Puzzle Piece 6" class="puzzle-piece piece6">
+    </div>
+</body>
+</html>

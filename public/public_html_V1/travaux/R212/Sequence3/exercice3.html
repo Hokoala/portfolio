@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercice 3 : Calculer une aire</h1>
+    <h2>Ouvrez la console (ALT+CMD+I)</h2>
+    <h2>Formulaire de calcule</h2>
+
+
+    <form action="">
+        <input type="number" id="largeur" name="largeur"><br/>
+        <input type="number" id="longueur" name="longueur"><br/>
+        <button type="button">Calculer</button>
+    </form>
+    
+    <script>
+        console.info('Lancement du programme JS');
+        // Je déclare les variables longueur, largeur et resultat
+        let longueur = 0;
+        let largeur = 0;
+        let resultat = 0;
+    
+        var boutton = document.querySelector("button");
+    
+        // Je défini ma fonction "calculerUneAire" avec les deux paramètres
+        function calculerUneAire(longueur, largeur) {
+            resultat = longueur * largeur;
+            console.log("L'aire de " + longueur + " m x " + largeur + " m = " + resultat + " m2");
+        }
+    
+        // J'appelle la fonction pour afficher le resultat dans la console
+        boutton.addEventListener("click", () => {
+            // Correction de la faute de frappe ici
+            longueur = document.getElementById("longueur").value;
+            largeur = document.getElementById("largeur").value;
+            calculerUneAire(longueur, largeur);
+        });
+    </script>
+</body>
+</html>

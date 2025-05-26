@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercice 3</title>
+</head>
+<body>
+    
+    <div class="logo-detail">
+    <h1>Les personnages de Toy Story</h1>
+
+        <div class="logo">
+            <img src="images/toy-story-logo.png" alt="Toy Story">
+        </div>
+
+    </div>
+
+    <div id="mazone" style="display: flex; flex-wrap: wrap;"></div>
+    <script>
+        // Chargement du fichier JSON via fetch
+        fetch('datastory.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('mazone');
+                data.forEach(personnage => {
+                    container.innerHTML += `
+                        <div class="card">
+                            <img src="${personnage.photo}" alt="${personnage.nom}">
+                            <div class="card-body">
+                                <div class="text-orange"><h2>${personnage.nom}</h2></div>
+                                <p>${personnage.info}</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stat">
+                                    <strong>${personnage.vie}</strong>
+                                    <p>Vie</p>
+                                </div>
+                                <div class="stat">
+                                    <strong>${personnage.discretion}</strong>
+                                    <p>Discrétion</p>
+                                </div>
+                                <div class="stat">
+                                    <strong>${personnage.action}</strong>
+                                    <p>Action</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            })
+            .catch(error => console.error("Erreur de chargement :", error));
+    </script>
+</body>
+</html>

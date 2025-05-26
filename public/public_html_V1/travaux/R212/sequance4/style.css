@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    padding: 0;
+
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    gap: 2px;
+    
+  }
+  
+  .affichage {
+    grid-column: span 4;
+    background-color: #00ff8c;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+  }
+  
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  button:hover {
+    background-color: #00ff8c;
+    color: #ffffff;
+  }
+  
+  .span-two{
+    grid-column: span 2;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Rubik", sans-serif;
+
+
+  }
+  
+  .span-two:hover {
+    background-color: #00ff8c;
+    color: #ffffff;
+  }

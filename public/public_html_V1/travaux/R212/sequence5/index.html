@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>Sequence5</title>
+</head>
+<body>
+    <header>
+        <nav>
+        <p>BOB DOE</p>
+            <div id="menu">
+                <ul>
+                    <li><a href="#Z1">ACCUEIL</a></li>
+                    <li><a href="#Z2">GALERIE</a></li>
+                    <li><a href="#Z3">COMPETENCS</a></li>
+                    <li><a href="#Z4">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="Z1">
+        <div id="sc1">
+            <h1>ACCUEIL</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, dignissimos! Iure deserunt quasi consectetur nam nobis, 
+                dolorem accusamus quidem animi quos, rem sint dolorum asperiores eaque iste vel laudantium tempore!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, temporibus beatae, sunt ut corporis explicabo hic eveniet odio accusantium esse dolor laboriosam,
+             suscipit recusandae necessitatibus nihil doloribus iste ad molestiae.</p>
+        </div>
+    </div>
+    <div id="Z2">
+        <div id="sc2">
+            <h1>Galerie</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, dignissimos! Iure deserunt quasi consectetur nam nobis, dolorem accusamus quidem animi quos, rem sint dolorum asperiores eaque iste vel laudantium tempore!</p>
+        </div>
+        
+    </div>
+    <div id="Z3">
+        <div id="sc3">
+            <h1>COMPTETENCE</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, dignissimos! Iure deserunt quasi consectetur nam nobis, dolorem accusamus quidem animi quos, rem sint dolorum asperiores eaque iste vel laudantium tempore!</p>
+        </div>
+    </div>
+    <div id="Z4">
+        <div id="sc4">
+            <h1>CONTACT</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, dignissimos! Iure deserunt quasi consectetur nam nobis, dolorem accusamus quidem animi quos, rem sint dolorum asperiores eaque iste vel laudantium tempore!</p>
+        </div>
+    </div>
+
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.localscroll@2.0.0/jquery.localScroll.min.js"></script>
+<script src="js/jquery.parallax-1.1.3.js"></script>
+<script>
+    $(function(){
+        $.localScroll();
+        $('#z1').parallax("50%", 0.8);
+        $('#z2').parallax("50%", 0.8);
+        $('#z3').parallax("50%", 0.8);
+        $('#z4').parallax("50%", 0.8);
+    })
+</script>
+</html>

@@ -1,0 +1,159 @@
+/* Global Styles */
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url('../tp1/images/parquet.jpg');
+    background-size: cover;
+}
+
+
+.logo-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 15px;
+    color: brown;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; 
+}
+
+
+.logo img:hover {
+    transform: scale(1.1) rotate(-5deg); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+/* Animation continue de rebond */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.logo img {
+    animation: bounce 2s infinite; 
+}
+
+
+
+
+
+
+#mazone {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 120px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Carte principale */
+.card {
+    width: 280px;
+    height: 40vh;
+    border-radius: 15px;
+    overflow: visible;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: url('../tp1/images/barbarian-bg.jpg');
+    background-size: cover; 
+    background-position: center; 
+}
+
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+
+.card:hover img {
+    transform: scale(1.2) translateY(-20px);
+}
+
+
+.card-body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 4px 4px;
+}
+
+.card-body .text-orange {
+    background-color: #ffa500;
+    color: #ffffff;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    height: 70px;
+    line-height: 1.4;
+    color: #555555;
+    text-align: center;
+    margin: 0;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: white;
+    border-radius: 0 0 15px 15px;
+    height: 80px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.card:hover .card-footer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat {
+    text-align: center;
+    flex: 1;
+}
+
+.stat .value {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.stat .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}

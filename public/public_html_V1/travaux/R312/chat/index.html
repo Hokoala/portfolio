@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>ChatQuery</title>
+</head>
+<body>
+  <!-- Conteneur pour l'animation de confettis -->
+  <div id="animation-container"></div>
+
+  <!-- Conteneur principal du chat -->
+  <div id="chat-container">
+    <div id="header">
+      <h1>ChatQuery</h1>
+    </div>
+    <div id="message-list"></div> <!-- Zone pour afficher les messages -->
+    <div id="input-container">
+      <div class="input-wrapper">
+        <button id="button-micro">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <input type="text" id="message-input" placeholder="Votre message...">
+        <button id="send-button">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ajouter JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

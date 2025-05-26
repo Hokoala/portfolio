@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+import ACGenerator from "../assets/ac-generator.jpg";
+import ElectricMotor from "../assets/electro-magnetic-motor.jpg";
+import type { link } from "motion/react-client";
+import Kenzo from "../assets/kenzo.png";
+import Utopia from "../assets/utopia.png";
+import Sae202 from "../assets/sae202.jpg";
+import Michel from "../assets/Michel-et-l’Anneau.png";
+
+const projects = [
+  {
+    title: "ANIMA",
+    description: "Projet de gestion de base de données pour une application web CRUD (Créer, Lire, Mettre à jour, Supprimer), sur le thème de l’animation Disney et DreamWorks.",
+    image: Sae202,
+    link: "https://mmi23e10.sae203.ovh/"
+  },
+
+  {
+   title: "Michel et l’Anneau",
+   description: "Avec notre equipe nous avons conçu une histoire interactive, intitulée Michel et l’anneau, alliant narration et interactivité pour captiver l’utilisateur.",
+   image: Michel,
+   link: "https://sae402.beauget.fr/"
+     },
+  {
+     title: "Refont Utopia",
+     description: "Refonte complète du site Utopia, de A à Z, avec un focus sur l’ergonomie, l’accessibilité et l’expérience utilisateur.",
+     image: Utopia,
+     link: "http://mmi23f01.sae301dev.ovh/"
+},
+  {
+    title: "Publication fictiv pour Amara by Kenzo",
+    description: "Notre projet de publication fictive pour Amara by Kenzo, mettant en avant des designs innovants et une approche créative.",
+    image: Kenzo,
+    link: "https://www.youtube.com/watch?v=pBSbaEKWqGo"
+  },
+];
+
+---
+
+
+<InfoLayout>
+  <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
+    <H1> Mes projets récents </H1>
+
+
+
+
+
+    <ul class="mt-4 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-8">
+      {projects.map((project) => (
+        <li>
+          <a href={project.link} target="_blank" rel="noopener noreferrer" class="block group">
+            <Image src={project.image} alt={project.title} class="aspect-[1/1.33] object-center object-cover rounded-lg shadow-md group-hover:opacity-90 transition duration-200" />
+            <div class="p-1 sm:p-2">
+              <h2 class="text-base text-zinc-100">{project.title}</h2>
+              <p class="text-sm text-zinc-400 text-balance">{project.description}</p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</InfoLayout>

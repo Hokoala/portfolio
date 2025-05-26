@@ -1,0 +1,352 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #F2EFEB;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+h1{
+    font-family: LEMONMILK;
+    text-align: center;
+        
+}
+@font-face {
+    font-family: 'LEMONMILK';
+    src: url('typographie/LEMONMILK-Regular.otf') format('truetype');
+
+}
+@font-face {
+    font-family: 'Valorant';
+    src: url('typographie/Valorant\ Font.ttf') format('truetype');
+}
+
+header{
+    width: 100%;
+    height:auto;
+    z-index: 5;
+    background-color: black;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.logo img{
+    width: 50px;
+    height: auto;
+    margin-right: 35px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5px;
+    height: 65px;
+}
+.menu nav ul{
+    display: flex;
+    justify-content: center;
+}
+nav li{
+    list-style: none;
+    position: relative;
+    padding: 0px 25px;
+}
+.menu a{
+    color:#ffffff;
+    text-decoration: none;
+    font-family: LEMONMILK;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #7941F2;
+    transition: 0.5s;
+    display: block;
+    text-align: center;
+}
+
+.menu a:hover{
+    background-color: #ffffff;
+    color: #7941F2;
+    transition: 0.5s;
+}
+
+section {
+    width: 100%;
+    height: auto; 
+}
+
+section h1{
+    font-family: LEMONMILK;
+    font-size: 50px;
+
+    
+}
+.maps{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: LEMONMILK;
+}
+.maps img {
+    box-shadow: 0px 0px 10px black;
+    transition: 0.5s;
+    object-fit: cover;  
+    width: 300px;
+    margin: 10px;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.menu .card img {
+    height: 100%;
+    box-shadow: 0px 0px 10px black;
+    transition: 0.5s;
+    width: 100%;
+    object-fit: cover;
+}
+
+.menu .card {
+    transform: scale(1);
+    transition: 0.5s;
+    width: 500px;
+    position: relative;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.menu .card:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.card p {
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    width: 100%;
+    top: 45%;
+}
+
+.card:hover p {
+    visibility: visible;
+    color: black;
+    font-size: 30px;
+    font-family: LEMONMILK;
+}
+
+.card:hover img {
+    opacity: 0.3;
+    background-color: rgb(82, 142, 82);
+}
+
+aside {
+    font-family: Arial, sans-serif;
+    background-image: url(image/fond\ contact.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 900px;
+}
+.contact-form {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    background-color: #7941F2;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+
+footer{
+    width: auto;
+    height: 50px;
+    background-color: #111111;
+    margin: 0%;
+    padding: 0;
+}
+footer ul {
+    display: flex;
+    justify-content: center ;
+
+}
+footer li{
+    list-style: none;
+    padding: 15px;
+
+
+}
+footer a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: LEMONMILK;
+    background-color: #7941F2;
+    padding: 10px;
+
+
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+    z-index: 1;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    display: block;
+    padding: 10px;
+}
+
+.submenu a {
+    color: white;
+}
+
+.submenu a:hover {
+    background-color: white;
+}
+.choix {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+    z-index: 1;
+}
+
+.menu li:hover .choix {
+    display: block;
+}
+
+.choix li {
+    display: block;
+    padding: 10px;
+}
+
+.choix a {
+    color: white;
+}
+
+.choix a:hover {
+    background-color: white;
+}
+.container-img {
+    margin-top: -100px;
+    z-index: 1;
+}
+
+.container-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+#monde {
+        padding: 10px;
+
+
+}
+
+.propos {
+    display: flex;
+    padding: 15px;
+    font-family: LEMONMILK;
+    text-align: right;
+    align-items: center;
+}
+#sous-titre{
+    font-size: 20px;
+}
+.propos .texte p {
+    font-size: 12px;
+}
+.propos .texte{
+    margin-right: 20px;
+    
+}
+.propos .texte h3{
+    font-size: 35px;
+}
+.propos video {
+    width: 800px;
+    top: auto;
+
+}
+#voir{
+    margin: auto;
+    text-align: center;
+    font-family: LEMONMILK;
+    font-size: 30px;
+}
+
+.AGENTS{
+    display: flex;
+    font-family: LEMONMILK;
+    text-align: left;
+    align-items: center;
+}
+.jett img{
+    width: 800px;
+    top: auto;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #111111;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #111111;
+}

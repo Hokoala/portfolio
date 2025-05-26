@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Formulaire</title>
+</head>
+<body>
+    <h1>Réservation de voyage</h1>
+    <div class="Formulaire">
+        <form action="#" method="#">
+
+            <div id="header">
+
+            <label for="destination">Lieu de Départ<span>*</span></label>
+            <input type="text" name="destination" id="destination"  placeholder="destination" required/> 
+
+            <label for="arrivee">Lieu d'arrivée<span>*</span></label>
+            <input type="text" name="arrivee" id="arrivee" placeholder="Arrivée" required/>
+
+            </div>
+
+            <div id="Date">
+
+            <label for="date">Date de départ<span>*</span></label>
+            <input type="date" name="date" id="date" required/>   
+
+            <label for="Retour">Retour<span>*</span></label>
+            <input type="date" name="Retour" id="Retour" placeholder="retour" required>
+
+            </div>   
+
+            <div id="nombre_passagers">
+                <label for="passagers">Passagers<span>*</span></label>
+                <select name="nombre_passagers" id="nombre_passagers" placeholder="nombre_passagers">
+                    <option value="">nombre de passagers</option>
+                    <option value="adult">Adult (25 years and older)</option>
+                    <option value="Young">Young (12 years - 24 year)</option>
+                    <option value="child">child (2 - 11 years)</option>
+                    <option value="infant">infant (0 - 23 months)</option>
+
+                  </select>
+                </div>
+                
+                <div id="checkbox">
+                    <p>Menu</p>
+                    <div>
+                        <label for="yes">yes<span>*</span></label>
+                        <input type="checkbox" name="yes" id="yes" required>
+                    </div>
+                    <div>
+                    <label for="non">non<span>*</span></label>
+                        <input type="checkbox" name="non" id="non" required>
+                    </div>
+                    <input type="submit" value="Envoyer" />
+                </div>
+                <p>* champs obligatoire</p>
+        </form>
+    </div>
+
+   </form>
+</body>
+</html>
