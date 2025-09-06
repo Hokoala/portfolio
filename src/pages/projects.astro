@@ -2,13 +2,14 @@
 import { Image } from "astro:assets";
 import H1 from "../components/h1.astro";
 import InfoLayout from "../layouts/InfoLayout.astro";
-import ACGenerator from "../assets/ac-generator.jpg";
-import ElectricMotor from "../assets/electro-magnetic-motor.jpg";
 import type { link } from "motion/react-client";
 import Kenzo from "../assets/kenzo.png";
 import Utopia from "../assets/utopia.png";
 import Sae202 from "../assets/sae202.jpg";
+import Unity from "../assets/Mockup_Unity.jpg";
+import Tree from "../assets/Mockup_Tree.js.png";
 import Michel from "../assets/Michel-et-l’Anneau.png";
+import  BookGraphique from "../assets/BookGraphique.png";
 
 const projects = [
   {
@@ -30,12 +31,40 @@ const projects = [
      image: Utopia,
      link: "http://mmi23f01.sae301dev.ovh/"
 },
+
+
   {
-    title: "Publication fictiv pour Amara by Kenzo",
-    description: "Notre projet de publication fictive pour Amara by Kenzo, mettant en avant des designs innovants et une approche créative.",
-    image: Kenzo,
-    link: "https://www.youtube.com/watch?v=pBSbaEKWqGo"
+    title: "Jeu unity 3D",
+    description: "Création d'un jeu 3D avec Unity",
+    image: Unity,
+    link: "http://mmi23e10.mmi-troyes.fr/wr409"
   },
+  {
+    title: "site tree js",
+    description: "Création d'un site avec Tree js, au cours de cette expérience, j'ai appris à manipuler des objets 3D et à créer des animations interactives.",
+    image: Tree,
+    link: "http://mmi23e10.mmi-troyes.fr/wr405d/"
+  },
+
+
+
+
+  {
+  title: "Book Graphique",
+  description: "Voici mon book graphique, une collection de mes travaux récents en design graphique, illustrant ma passion pour l'esthétique et la créativité.",
+  image: BookGraphique,
+  link: "https://www.linkedin.com/in/jean-michel-le/overlay/1739270714168/single-media-viewer/?profileId=ACoAAEEs1jkB8oZaJ4BYEcU53ccQb6FeJdpMZfE"
+},
+
+{
+  title: "Publication fictiv pour Amara by Kenzo",
+  description: "Notre projet de publication fictive pour Amara by Kenzo, mettant en avant des designs innovants et une approche créative.",
+  image: Kenzo,
+  link: "https://www.youtube.com/watch?v=pBSbaEKWqGo"
+},
+
+
+
 ];
 
 ---
@@ -44,11 +73,6 @@ const projects = [
 <InfoLayout>
   <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
     <H1> Mes projets récents </H1>
-
-
-
-
-
     <ul class="mt-4 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-8">
       {projects.map((project) => (
         <li>

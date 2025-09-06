@@ -22,6 +22,8 @@ Voici un aperçu de mes expériences et projets professionnels.
 Mars 2025 - Mai 2025
 - Conception de maquettes visuelles pour des bâches publicitaires grand format, en respectant les contraintes techniques d’impression.
 - Refonte de l’identité visuelle de l’entreprise : modernisation du logo existant, propositions de déclinaisons pour différents supports.
+- Amélioration et optimisation du site internet, avec un renforcement du référencement SEO.
+
 
 ### Stage Graphiste — JMI 
 *Mai 2022 - Août 2023*
