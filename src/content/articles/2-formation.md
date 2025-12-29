@@ -15,7 +15,7 @@ originalLink: https://example.com/Formation
 
 ## 📚 Formations
 
-### 🎓 Bachelor MMI – Métiers du Multimédia et de l’Internet
+### 🎓 Bachelor MMI – Métiers du Multimédia et de l’Internet Bac+3
 *Parcours : Développement web interactif* <br>
 *2023 - 2026 – Université de Troyes (IUT de Troyes)*
 
