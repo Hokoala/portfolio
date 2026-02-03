@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import H1 from "../../components/h1.astro";
+import InfoLayout from "../../layouts/InfoLayout.astro";
+import { univProjects, tagColors } from "../../data/univ-projects";
+---
+
+<InfoLayout>
+    <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
+        <!-- Header Section -->
+        <div class="mb-8 sm:mb-16">
+            <p class="text-zinc-500 text-sm uppercase tracking-widest mb-2">MMI Troyes</p>
+            <H1>Projets<br/>Universitaires</H1>
+            <p class="mt-4 sm:mt-6 text-zinc-400 max-w-2xl text-base sm:text-lg leading-relaxed">
+                Découvrez mes réalisations académiques en développement web et design,
+                créées dans le cadre de ma formation en Métiers du Multimédia et de l'Internet.
+            </p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="flex gap-8 sm:gap-16 mb-12 sm:mb-16 py-6 border-y border-zinc-800">
+            <div>
+                <p class="text-3xl sm:text-4xl font-bold text-white">{univProjects.length}</p>
+                <p class="text-zinc-500 text-sm">Projets</p>
+            </div>
+            <div>
+                <p class="text-3xl sm:text-4xl font-bold text-white">2024</p>
+                <p class="text-zinc-500 text-sm">Année</p>
+            </div>
+            <div>
+                <p class="text-3xl sm:text-4xl font-bold text-white">MMI</p>
+                <p class="text-zinc-500 text-sm">Formation</p>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+            {univProjects.map((project) => (
+                <li class="group">
+                    <a href={`/univ/${project.slug}`} class="block">
+                        <!-- Image Container -->
+                        <div class="relative overflow-hidden rounded-2xl mb-4">
+                            <Image
+                                src={project.image}
+                                alt={project.title}
+                                class="aspect-video object-cover object-center w-full transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <!-- Overlay on hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <span class="text-white text-sm font-medium flex items-center gap-2">
+                                    Voir les détails
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 12h14"/>
+                                        <path d="m12 5 7 7-7 7"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <!-- Year Badge -->
+                            <div class="absolute top-4 right-4 bg-zinc-900/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                                <span class="text-zinc-300 text-xs font-medium">{project.year}</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="space-y-3">
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-2">
+                                {project.tags.map((tag) => (
+                                    <span class={`text-xs px-3 py-1 rounded-full border ${tagColors[tag] || "bg-zinc-500/20 text-zinc-300 border-zinc-500/30"}`}>
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <!-- Title -->
+                            <h2 class="text-xl sm:text-2xl font-semibold text-zinc-100 group-hover:text-white transition-colors">
+                                {project.title}
+                            </h2>
+
+                            <!-- Description -->
+                            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed line-clamp-3">
+                                {project.description}
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            ))}
+        </ul>
+
+        <!-- CTA Section -->
+        <div class="mt-16 sm:mt-24 pt-8 border-t border-zinc-800">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                    <h3 class="text-zinc-100 text-lg font-medium">Voir tous mes projets</h3>
+                    <p class="text-zinc-500 text-sm">Découvrez l'ensemble de mes réalisations personnelles et professionnelles</p>
+                </div>
+                <a
+                    href="/projects"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-100 text-zinc-900 rounded-full font-medium text-sm hover:bg-white transition-colors"
+                >
+                    Tous les projets
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</InfoLayout>
