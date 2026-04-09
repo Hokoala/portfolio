@@ -18,6 +18,12 @@ Voici un aperçu de mes expériences et projets professionnels.
 
 ## 💼 Expériences professionnels
 
+### Stage Développeur Full Stack — Ranseau System
+*Mars 2026 - Juillet 2026*
+- Développement full stack au sein de l'entreprise Ranseau System.
+- Conception et développement de fonctionnalités front-end et back-end.
+- Participation aux différentes phases du cycle de développement logiciel.
+
 ### Stage Graphiste — Troyes Néon Enseigne
 Mars 2025 - Mai 2025
 - Conception de maquettes visuelles pour des bâches publicitaires grand format, en respectant les contraintes techniques d’impression.
