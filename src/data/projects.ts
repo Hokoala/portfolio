@@ -9,8 +9,8 @@ import Spotify from "../assets/spotify.png";
 import SiteMomentum from "../assets/SiteMomentum.png";
 import AppFilm from "../assets/APP-Movie.png";
 import DraftAI from "../assets/DraftAI.png";
-import MediSimplePlaceholder from "../assets/DraftAI.png"; // TODO: remplacer par une vraie capture MediSimple
-import RansauPlaceholder from "../assets/DraftAI.png"; // TODO: remplacer par une vraie capture Ransau Systeme
+import MediSimpleImg from "../assets/medisimpel.23.25.png";
+import RansauImg from "../assets/ransau-systeme.png";
 import Docly from "../assets/WR602d.png";
 
 export interface Project {
@@ -37,7 +37,7 @@ export const projects: Project[] = [
         title: "Refonte Ransau Systeme",
         description: "Refonte complète du site de Ransau Systeme pendant mon stage — modernisation du design, composants React, footer, boutons et animations 3D.",
         longDescription: "Dans le cadre de mon stage, j'ai réalisé une refonte complète du site de Ransau Systeme, une entreprise dont l'ancien système présentait de nombreux manques côté design et expérience utilisateur. Le projet consistait à reconstruire l'interface en React et Tailwind CSS en repartant des problèmes identifiés : absence de cohérence visuelle, boutons non stylisés, footer inexistant, et aucune animation. J'ai redesigné l'ensemble des composants, intégré des animations 3D pour dynamiser l'expérience, et livré une interface moderne, responsive et fidèle à l'identité de l'entreprise.",
-        image: RansauPlaceholder,
+        image: RansauImg,
         link: "https://www.ransau-systeme.com/",
         tags: ["Web", "Design", "Stage"],
         year: "2025",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
         title: "MediSimple",
         description: "Assistant IA qui analyse les ordonnances médicales pour aider les patients à comprendre leurs médicaments, avec rappels intelligents et suivi personnalisé.",
         longDescription: "MediSimple est une application de santé numérique pensée pour réduire la non-observance médicamenteuse — responsable de 180 000 hospitalisations évitables chaque année en France. L'IA analyse une photo ou un PDF d'ordonnance et génère des explications en langage simple dans plus de 50 langues. Des rappels intelligents sont envoyés au bon moment, et un tableau de bord permet au médecin et à la famille de suivre la prise en temps réel. Le projet intègre un mode Alzheimer (interface ultra-simplifiée, alerte famille automatique), un dashboard médecin avec code couleur d'observance, et une accessibilité totale : grands caractères, lecture vocale, modes daltoniens, écriture RTL. L'application est conforme RGPD, hébergée sur un serveur certifié HDS, et les données sont chiffrées en AES-256.",
-        image: MediSimplePlaceholder,
+        image: MediSimpleImg,
         link: "https://github.com/Hokoala/v0-me-me",
         tags: ["Web", "IA", "SaaS", "Santé"],
         year: "2025",
