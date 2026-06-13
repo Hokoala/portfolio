@@ -10,7 +10,17 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
    output: 'server',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    resolve: {
+      dedupe: ['react', 'react-dom', 'three', '@react-three/fiber', '@react-three/drei'],
+    },
+    optimizeDeps: {
+      include: ['three', '@react-three/fiber', '@react-three/drei'],
+      exclude: [],
+    },
+    ssr: {
+      noExternal: ['three', '@react-three/fiber', '@react-three/drei'],
+    },
   },
 
   integrations: [react()],
