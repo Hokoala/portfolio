@@ -30,11 +30,23 @@ export default function Navigation({ children }: { children: React.ReactNode; })
                             className="lg:hidden absolute z-50 w-full h-full flex flex-col gap-4 top-0 bg-zinc-900/20 backdrop-blur-md">
 
                             <div className="fixed bottom-20 sm:bottom-32 left-4 sm:left-8 flex flex-col items-start justify-center gap-4">
-                                <MobileLink href="/blog">                                    
+                                <MobileLink href="/univ">
+                                    Portfolio
+                                </MobileLink>
+
+                                <MobileLink href="/blog">
                                     Expérience
                                 </MobileLink>
 
-                                <MobileLink href="/about">                                
+                                <MobileLink href="/parcours">
+                                    Parcours
+                                </MobileLink>
+
+                                <MobileLink href="/stage">
+                                    Stage
+                                </MobileLink>
+
+                                <MobileLink href="/about">
                                     À propos
                                 </MobileLink>
 
@@ -63,7 +75,7 @@ export default function Navigation({ children }: { children: React.ReactNode; })
                 }
             </AnimatePresence>
 
-            <button type="button" onClick={() => setIsOpen(prev => !prev)} className="w-6 sm:w-8 h-fit text-white cursor-pointer hover:outline-2 focus-visible:outline-2 outline-offset-1 outline-zinc-100/20 focus-visible:outline-white rounded-lg">
+            <button type="button" onClick={() => setIsOpen(prev => !prev)} className="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center text-white cursor-pointer bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-xl hover:bg-zinc-700/50 transition-colors">
                 {isOpen ?
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" aria-hidden>
                         <title>Close Menu Icon</title>

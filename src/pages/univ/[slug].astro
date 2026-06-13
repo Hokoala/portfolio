@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import H1 from "../../components/h1.astro";
 import InfoLayout from "../../layouts/InfoLayout.astro";
-import { univProjects, tagColors, getProjectBySlug } from "../../data/univ-projects";
+import { univProjects, tagColors, projectTypeColors, getProjectBySlug } from "../../data/univ-projects";
 
 export function getStaticPaths() {
     return univProjects.map((project) => ({
@@ -16,6 +16,8 @@ const project = getProjectBySlug(slug);
 if (!project) {
     return Astro.redirect("/univ");
 }
+
+const allCompetencies = [...new Set(project.traces.flatMap(t => t.competencies))];
 ---
 
 <InfoLayout>
@@ -32,6 +34,9 @@ if (!project) {
         <!-- Header -->
         <div class="mb-8 sm:mb-12">
             <div class="flex flex-wrap gap-2 mb-4">
+                <span class={`text-xs px-3 py-1 rounded-full border font-medium ${projectTypeColors[project.type]}`}>
+                    {project.type}
+                </span>
                 {project.tags.map((tag) => (
                     <span class={`text-xs px-3 py-1 rounded-full border ${tagColors[tag] || "bg-zinc-500/20 text-zinc-300 border-zinc-500/30"}`}>
                         {tag}
@@ -59,9 +64,114 @@ if (!project) {
             <div class="lg:col-span-2 space-y-8">
                 <div>
                     <h2 class="text-xl font-semibold text-zinc-100 mb-4">Description du projet</h2>
-                    <p class="text-zinc-400 leading-relaxed">
-                        {project.longDescription}
-                    </p>
+                    <p class="text-zinc-400 leading-relaxed">{project.longDescription}</p>
+                </div>
+
+                <!-- Traces -->
+                <div>
+                    <h2 class="text-xl font-semibold text-zinc-100 mb-6">
+                        Traces
+                        <span class="text-zinc-500 text-base font-normal ml-2">({project.traces.length})</span>
+                    </h2>
+                    <div class="space-y-8">
+                        {project.traces.map((trace, index) => (
+                            <div class="bg-zinc-800/30 border border-zinc-700/50 rounded-2xl p-6 space-y-4" id={trace.id}>
+                                <!-- Trace header -->
+                                <div class="flex items-start gap-3">
+                                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-zinc-700 text-zinc-300 text-xs font-bold shrink-0">
+                                        {index + 1}
+                                    </span>
+                                    <h3 class="text-lg font-semibold text-zinc-100">{trace.title}</h3>
+                                </div>
+
+                                <!-- Media -->
+                                {trace.media.type === "image" && (
+                                    <div class="rounded-xl overflow-hidden">
+                                        {trace.media.sources.map((src) => (
+                                            typeof src === "string" ? (
+                                                <img src={src} alt={trace.title} class="w-full object-cover rounded-xl" />
+                                            ) : (
+                                                <Image src={src} alt={trace.title} class="w-full object-cover rounded-xl" />
+                                            )
+                                        ))}
+                                    </div>
+                                )}
+                                {trace.media.type === "link" && (
+                                    <div class="flex flex-wrap gap-2">
+                                        {trace.media.sources.map((src) => (
+                                            <a
+                                                href={src as string}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700/50 border border-zinc-600 rounded-lg text-zinc-300 text-sm hover:bg-zinc-700 transition-colors"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                                    <polyline points="15 3 21 3 21 9"/>
+                                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                                </svg>
+                                                Voir en ligne
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
+                                {trace.media.type === "video" && (
+                                    <div class="flex flex-wrap gap-2">
+                                        {trace.media.sources.map((src) => (
+                                            <a
+                                                href={src as string}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-700/50 border border-zinc-600 rounded-lg text-zinc-300 text-sm hover:bg-zinc-700 transition-colors"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                                </svg>
+                                                Voir la vidéo
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
+
+                                <!-- Légende -->
+                                <div class="border-l-2 border-zinc-600 pl-4">
+                                    <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">Légende</p>
+                                    <p class="text-zinc-400 text-sm leading-relaxed italic">{trace.legend}</p>
+                                </div>
+
+                                <!-- Commentaire -->
+                                <div>
+                                    <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">Commentaire</p>
+                                    <p class="text-zinc-400 text-sm leading-relaxed">{trace.commentary}</p>
+                                </div>
+
+                                <!-- Compétences de la trace -->
+                                <div>
+                                    <p class="text-xs text-zinc-500 uppercase tracking-widest mb-2">Compétences</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        {trace.competencies.map((c) => (
+                                            <span class="text-xs px-3 py-1 rounded-full bg-violet-500/15 text-violet-300 border border-violet-500/30">
+                                                {c}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Toutes les compétences du projet -->
+                <div>
+                    <h2 class="text-xl font-semibold text-zinc-100 mb-4">Compétences validées</h2>
+                    <ul class="space-y-2">
+                        {allCompetencies.map((c) => (
+                            <li class="flex items-start gap-3">
+                                <span class="mt-1 w-2 h-2 rounded-full bg-violet-400 shrink-0"></span>
+                                <span class="text-zinc-300 text-sm">{c}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
                 <!-- Technologies -->
@@ -79,7 +189,6 @@ if (!project) {
 
             <!-- Sidebar -->
             <div class="space-y-6">
-                <!-- Project Info Card -->
                 <div class="bg-zinc-800/30 border border-zinc-700/50 rounded-2xl p-6 space-y-6">
                     <div>
                         <p class="text-zinc-500 text-sm mb-1">Rôle</p>
@@ -93,9 +202,25 @@ if (!project) {
                         <p class="text-zinc-500 text-sm mb-1">Année</p>
                         <p class="text-zinc-100 font-medium">{project.year}</p>
                     </div>
+                    <div>
+                        <p class="text-zinc-500 text-sm mb-1">Nombre de traces</p>
+                        <p class="text-zinc-100 font-medium">{project.traces.length}</p>
+                    </div>
                 </div>
 
-                <!-- CTA Button -->
+                <!-- Navigation traces -->
+                <div class="bg-zinc-800/30 border border-zinc-700/50 rounded-2xl p-6">
+                    <p class="text-zinc-500 text-sm mb-3">Naviguer les traces</p>
+                    <div class="space-y-2">
+                        {project.traces.map((trace, index) => (
+                            <a href={`#${trace.id}`} class="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors">
+                                <span class="w-5 h-5 rounded-full bg-zinc-700 text-zinc-300 text-xs flex items-center justify-center shrink-0">{index + 1}</span>
+                                <span class="truncate">{trace.title}</span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
                 <a
                     href={project.link}
                     target="_blank"

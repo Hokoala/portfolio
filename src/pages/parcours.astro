@@ -1,0 +1,169 @@
+---
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+
+const formations = [
+    {
+        period: "2023 — 2026",
+        title: "BUT MMI — Métiers du Multimédia et de l'Internet",
+        school: "IUT de Troyes",
+        description: "Formation pluridisciplinaire alliant développement web, design graphique, UX/UI, communication et gestion de projet. Spécialisation en développement web et design d'interface.",
+        tags: ["Développement web", "Design", "UX/UI", "Communication"],
+        current: true,
+    },
+    {
+        period: "2020 — 2023",
+        title: "Baccalauréat",
+        school: "À remplir",
+        description: "À remplir — décris ici ton bac (général, technologique, spécialités choisies, mention…).",
+        tags: ["À remplir"],
+        current: false,
+    },
+];
+
+const competences = [
+    {
+        category: "Développement",
+        items: ["React", "Next.js", "Astro", "Vue.js", "Nuxt.js", "PHP", "Symfony", "JavaScript", "TypeScript", "HTML/CSS", "Tailwind CSS"],
+    },
+    {
+        category: "Design",
+        items: ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects", "InDesign"],
+    },
+    {
+        category: "Outils & méthodes",
+        items: ["Git", "GitHub", "API REST", "OAuth 2.0", "MySQL", "PostgreSQL", "Docker"],
+    },
+];
+---
+
+<InfoLayout title="Parcours scolaire">
+    <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
+
+        <!-- Back -->
+        <a href="/" class="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 transition-colors mb-8 group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform">
+                <path d="m12 19-7-7 7-7"/>
+                <path d="M19 12H5"/>
+            </svg>
+            Retour
+        </a>
+
+        <!-- Header -->
+        <div class="mb-8 sm:mb-16">
+            <p class="text-zinc-500 text-sm uppercase tracking-widest mb-2">Formation</p>
+            <H1>Parcours<br/>Scolaire</H1>
+            <p class="mt-4 sm:mt-6 text-zinc-400 max-w-2xl text-base sm:text-lg leading-relaxed">
+                Mon parcours académique en développement web et design — de la formation initiale
+                au BUT MMI, avec les compétences acquises en chemin.
+            </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex flex-wrap gap-8 sm:gap-16 mb-12 sm:mb-16 py-6 border-y border-zinc-800">
+            <div>
+                <p class="text-3xl sm:text-4xl font-bold text-white">3</p>
+                <p class="text-zinc-500 text-sm">Ans de BUT</p>
+            </div>
+            <div>
+                <p class="text-3xl sm:text-4xl font-bold text-white">MMI</p>
+                <p class="text-zinc-500 text-sm">Spécialité</p>
+            </div>
+            <div>
+                <p class="text-3xl sm:text-4xl font-bold text-white">2026</p>
+                <p class="text-zinc-500 text-sm">Diplôme prévu</p>
+            </div>
+        </div>
+
+        <!-- Timeline formations -->
+        <div class="mb-16">
+            <h2 class="text-xl font-semibold text-zinc-100 mb-8">Formations</h2>
+            <div class="relative space-y-0">
+                {formations.map((f, i) => (
+                    <div class="relative flex gap-6 pb-12 last:pb-0">
+                        <!-- Ligne verticale -->
+                        {i < formations.length - 1 && (
+                            <div class="absolute left-[9px] top-6 bottom-0 w-px bg-zinc-700"></div>
+                        )}
+
+                        <!-- Point -->
+                        <div class={`relative mt-1 w-5 h-5 rounded-full border-2 shrink-0 ${f.current ? "bg-zinc-100 border-zinc-100" : "bg-zinc-900 border-zinc-600"}`}></div>
+
+                        <!-- Contenu -->
+                        <div class="flex-1 pb-2">
+                            <div class="flex flex-wrap items-center gap-3 mb-1">
+                                <span class="text-zinc-500 text-sm font-mono">{f.period}</span>
+                                {f.current && (
+                                    <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                                        En cours
+                                    </span>
+                                )}
+                            </div>
+                            <h3 class="text-zinc-100 font-semibold text-lg mb-1">{f.title}</h3>
+                            <p class="text-zinc-400 text-sm mb-3">{f.school}</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed mb-4">{f.description}</p>
+                            <div class="flex flex-wrap gap-2">
+                                {f.tags.map((tag) => (
+                                    <span class="text-xs px-3 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- Compétences techniques -->
+        <div class="mb-16">
+            <h2 class="text-xl font-semibold text-zinc-100 mb-8">Compétences techniques</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {competences.map((cat) => (
+                    <div class="bg-zinc-800/30 border border-zinc-700/50 rounded-2xl p-6">
+                        <p class="text-zinc-400 text-xs uppercase tracking-widest mb-4">{cat.category}</p>
+                        <div class="flex flex-wrap gap-2">
+                            {cat.items.map((item) => (
+                                <span class="text-xs px-3 py-1.5 bg-zinc-800 border border-zinc-700 rounded-lg text-zinc-300">
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 sm:mt-24 pt-8 border-t border-zinc-800">
+            <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+                <div>
+                    <h3 class="text-zinc-100 text-lg font-medium">Voir mes projets universitaires</h3>
+                    <p class="text-zinc-500 text-sm">Les réalisations concrètes issues de ma formation</p>
+                </div>
+                <div class="flex gap-3">
+                    <a
+                        href="/univ"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-100 text-zinc-900 rounded-full font-medium text-sm hover:bg-white transition-colors"
+                    >
+                        Projets MMI
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a
+                        href="/stage"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 text-zinc-100 border border-zinc-700 rounded-full font-medium text-sm hover:bg-zinc-700 transition-colors"
+                    >
+                        Mon stage
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</InfoLayout>

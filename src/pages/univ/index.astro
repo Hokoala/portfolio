@@ -2,13 +2,17 @@
 import { Image } from "astro:assets";
 import H1 from "../../components/h1.astro";
 import InfoLayout from "../../layouts/InfoLayout.astro";
-import { univProjects, tagColors } from "../../data/univ-projects";
+import { univProjects, tagColors, getAllCompetencies, getAllTypes, projectTypeColors } from "../../data/univ-projects";
+
+const allCompetencies = getAllCompetencies();
+const allTags = [...new Set(univProjects.flatMap(p => p.tags))].sort();
+const allTypes = getAllTypes();
 ---
 
 <InfoLayout>
     <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
         <!-- Header Section -->
-        <div class="mb-8 sm:mb-16">
+        <div class="mb-8 sm:mb-12">
             <p class="text-zinc-500 text-sm uppercase tracking-widest mb-2">MMI Troyes</p>
             <H1>Projets<br/>Universitaires</H1>
             <p class="mt-4 sm:mt-6 text-zinc-400 max-w-2xl text-base sm:text-lg leading-relaxed">
@@ -18,74 +22,161 @@ import { univProjects, tagColors } from "../../data/univ-projects";
         </div>
 
         <!-- Stats Section -->
-        <div class="flex gap-8 sm:gap-16 mb-12 sm:mb-16 py-6 border-y border-zinc-800">
+        <div class="flex gap-8 sm:gap-16 mb-8 sm:mb-12 py-6 border-y border-zinc-800">
             <div>
                 <p class="text-3xl sm:text-4xl font-bold text-white">{univProjects.length}</p>
                 <p class="text-zinc-500 text-sm">Projets</p>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl font-bold text-white">2026</p>
-                <p class="text-zinc-500 text-sm">Année</p>
+                <p class="text-3xl sm:text-4xl font-bold text-white">{univProjects.reduce((acc, p) => acc + p.traces.length, 0)}</p>
+                <p class="text-zinc-500 text-sm">Traces</p>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl font-bold text-white">MMI</p>
-                <p class="text-zinc-500 text-sm">Formation</p>
+                <p class="text-3xl sm:text-4xl font-bold text-white">{allCompetencies.length}</p>
+                <p class="text-zinc-500 text-sm">Compétences</p>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="mb-8 sm:mb-12 space-y-4" id="filters">
+            <!-- Type filters -->
+            <div>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mb-3">Filtrer par type</p>
+                <div class="flex flex-wrap gap-2">
+                    <button
+                        data-filter="type"
+                        data-value="all"
+                        class="filter-type active text-xs px-3 py-1.5 rounded-full border border-zinc-500/50 bg-zinc-100 text-zinc-900 transition-colors cursor-pointer"
+                    >
+                        Tous
+                    </button>
+                    {allTypes.map((type) => (
+                        <button
+                            data-filter="type"
+                            data-value={type}
+                            class={`filter-type text-xs px-3 py-1.5 rounded-full border cursor-pointer transition-colors ${projectTypeColors[type]}`}
+                        >
+                            {type}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Tag filters -->
+            <div>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mb-3">Filtrer par catégorie</p>
+                <div class="flex flex-wrap gap-2">
+                    <button
+                        data-filter="tag"
+                        data-value="all"
+                        class="filter-tag active text-xs px-3 py-1.5 rounded-full border border-zinc-500/50 bg-zinc-100 text-zinc-900 transition-colors cursor-pointer"
+                    >
+                        Tous
+                    </button>
+                    {allTags.map((tag) => (
+                        <button
+                            data-filter="tag"
+                            data-value={tag}
+                            class={`filter-tag text-xs px-3 py-1.5 rounded-full border cursor-pointer transition-colors ${tagColors[tag] || "bg-zinc-500/20 text-zinc-300 border-zinc-500/30"}`}
+                        >
+                            {tag}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Competency filters -->
+            <div>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mb-3">Filtrer par compétence</p>
+                <div class="flex flex-wrap gap-2">
+                    <button
+                        data-filter="competency"
+                        data-value="all"
+                        class="filter-comp active text-xs px-3 py-1.5 rounded-full border border-zinc-500/50 bg-zinc-100 text-zinc-900 transition-colors cursor-pointer"
+                    >
+                        Toutes
+                    </button>
+                    {allCompetencies.map((comp) => (
+                        <button
+                            data-filter="competency"
+                            data-value={comp}
+                            class="filter-comp text-xs px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/15 text-violet-300 transition-colors cursor-pointer"
+                        >
+                            {comp}
+                        </button>
+                    ))}
+                </div>
             </div>
         </div>
 
         <!-- Projects Grid -->
-        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-            {univProjects.map((project) => (
-                <li class="group">
-                    <a href={`/univ/${project.slug}`} class="block">
-                        <!-- Image Container -->
-                        <div class="relative overflow-hidden rounded-2xl mb-4">
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                class="aspect-video object-cover object-center w-full transition-transform duration-500 group-hover:scale-105"
-                            />
-                            <!-- Overlay on hover -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <span class="text-white text-sm font-medium flex items-center gap-2">
-                                    Voir les détails
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14"/>
-                                        <path d="m12 5 7 7-7 7"/>
-                                    </svg>
-                                </span>
-                            </div>
-                            <!-- Year Badge -->
-                            <div class="absolute top-4 right-4 bg-zinc-900/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                                <span class="text-zinc-300 text-xs font-medium">{project.year}</span>
-                            </div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="space-y-3">
-                            <!-- Tags -->
-                            <div class="flex flex-wrap gap-2">
-                                {project.tags.map((tag) => (
-                                    <span class={`text-xs px-3 py-1 rounded-full border ${tagColors[tag] || "bg-zinc-500/20 text-zinc-300 border-zinc-500/30"}`}>
-                                        {tag}
+        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12" id="projects-grid">
+            {univProjects.map((project) => {
+                const projectCompetencies = project.traces.flatMap(t => t.competencies);
+                return (
+                    <li
+                        class="group project-card"
+                        data-tags={JSON.stringify(project.tags)}
+                        data-competencies={JSON.stringify(projectCompetencies)}
+                        data-type={project.type}
+                    >
+                        <a href={`/univ/${project.slug}`} class="block">
+                            <!-- Image Container -->
+                            <div class="relative overflow-hidden rounded-2xl mb-4">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    class="aspect-video object-cover object-center w-full transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                    <span class="text-white text-sm font-medium flex items-center gap-2">
+                                        Voir les détails
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"/>
+                                            <path d="m12 5 7 7-7 7"/>
+                                        </svg>
                                     </span>
-                                ))}
+                                </div>
+                                <div class="absolute top-4 right-4 bg-zinc-900/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                                    <span class="text-zinc-300 text-xs font-medium">{project.year}</span>
+                                </div>
                             </div>
 
-                            <!-- Title -->
-                            <h2 class="text-xl sm:text-2xl font-semibold text-zinc-100 group-hover:text-white transition-colors">
-                                {project.title}
-                            </h2>
+                            <!-- Content -->
+                            <div class="space-y-3">
+                                <div class="flex flex-wrap gap-2">
+                                    <!-- Type badge -->
+                                    <span class={`text-xs px-3 py-1 rounded-full border font-medium ${projectTypeColors[project.type]}`}>
+                                        {project.type}
+                                    </span>
+                                    {project.tags.map((tag) => (
+                                        <span class={`text-xs px-3 py-1 rounded-full border ${tagColors[tag] || "bg-zinc-500/20 text-zinc-300 border-zinc-500/30"}`}>
+                                            {tag}
+                                        </span>
+                                    ))}
+                                    <span class="text-xs px-3 py-1 rounded-full border border-zinc-600 bg-zinc-800/50 text-zinc-400">
+                                        {project.traces.length} trace{project.traces.length > 1 ? "s" : ""}
+                                    </span>
+                                </div>
 
-                            <!-- Description -->
-                            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed line-clamp-3">
-                                {project.description}
-                            </p>
-                        </div>
-                    </a>
-                </li>
-            ))}
+                                <h2 class="text-xl sm:text-2xl font-semibold text-zinc-100 group-hover:text-white transition-colors">
+                                    {project.title}
+                                </h2>
+
+                                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed line-clamp-3">
+                                    {project.description}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                );
+            })}
         </ul>
+
+        <!-- Empty state -->
+        <div id="empty-state" class="hidden text-center py-16">
+            <p class="text-zinc-500 text-lg">Aucun projet ne correspond aux filtres sélectionnés.</p>
+        </div>
 
         <!-- CTA Section -->
         <div class="mt-16 sm:mt-24 pt-8 border-t border-zinc-800">
@@ -108,3 +199,64 @@ import { univProjects, tagColors } from "../../data/univ-projects";
         </div>
     </div>
 </InfoLayout>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        let activeTag = "all";
+        let activeComp = "all";
+        let activeType = "all";
+
+        const cards = document.querySelectorAll<HTMLElement>(".project-card");
+        const emptyState = document.getElementById("empty-state");
+        const tagButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter="tag"]');
+        const compButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter="competency"]');
+        const typeButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter="type"]');
+
+        function filterProjects() {
+            let visibleCount = 0;
+            cards.forEach((card) => {
+                const tags: string[] = JSON.parse(card.dataset.tags || "[]");
+                const comps: string[] = JSON.parse(card.dataset.competencies || "[]");
+                const type = card.dataset.type || "";
+
+                const matchTag = activeTag === "all" || tags.includes(activeTag);
+                const matchComp = activeComp === "all" || comps.includes(activeComp);
+                const matchType = activeType === "all" || type === activeType;
+
+                if (matchTag && matchComp && matchType) {
+                    card.style.display = "";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            if (emptyState) {
+                emptyState.classList.toggle("hidden", visibleCount > 0);
+            }
+        }
+
+        function setupFilter(buttons: NodeListOf<HTMLButtonElement>, setActive: (val: string) => void) {
+            buttons.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const value = btn.dataset.value || "all";
+                    setActive(value);
+                    buttons.forEach((b) => {
+                        if (b.dataset.value === value) {
+                            b.classList.add("bg-zinc-100", "text-zinc-900", "border-zinc-100");
+                            b.classList.add("active");
+                        } else {
+                            b.classList.remove("bg-zinc-100", "text-zinc-900", "border-zinc-100");
+                            b.classList.remove("active");
+                        }
+                    });
+                    filterProjects();
+                });
+            });
+        }
+
+        setupFilter(typeButtons, (v) => activeType = v);
+        setupFilter(tagButtons, (v) => activeTag = v);
+        setupFilter(compButtons, (v) => activeComp = v);
+    });
+</script>
