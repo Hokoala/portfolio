@@ -68,6 +68,19 @@ if (!project) {
                     <p class="text-zinc-400 leading-relaxed">{project.commentary}</p>
                 </div>
 
+                <!-- Compétences -->
+                <div>
+                    <h2 class="text-xl font-semibold text-zinc-100 mb-4">Compétences validées</h2>
+                    <ul class="space-y-2">
+                        {project.competencies.map((c) => (
+                            <li class="flex items-start gap-3">
+                                <span class="mt-1 w-2 h-2 rounded-full bg-zinc-400 shrink-0"></span>
+                                <span class="text-zinc-300 text-sm">{c}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
                 <!-- Technologies -->
                 <div>
                     <h2 class="text-xl font-semibold text-zinc-100 mb-4">Technologies utilisées</h2>
