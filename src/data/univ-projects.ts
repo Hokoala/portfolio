@@ -1,5 +1,8 @@
 import ApiSpotify from "../assets/api-spotify.png";
 import SpotifyStats from "../assets/spotify.png";
+import SpotifyDashboard from "../assets/spotify-dashboard.png";
+import SpotifyWrapped from "../assets/wrapped.png";
+import SpotifyCarte from "../assets/spotify-carte.23.55.png";
 import SiteMomentum from "../assets/SiteMomentum.png";
 import MoodboardMomentum from "../assets/moodabord.png";
 import MaquetteMomentum from "../assets/maquette_du_site.png";
@@ -100,7 +103,7 @@ export const univProjects: UnivProject[] = [
             {
                 id: "devflow-decouverte",
                 title: "Découverte de Python et conception du CLI",
-                legend: "A remplir — ajoute une capture du terminal montrant DevFlow en action ou du code source Python. On y verrait la structure du projet, les commandes disponibles et l'architecture modulaire du CLI.",
+                legend: "Interface en ligne de commande de DevFlow montrant la commande de scaffolding : en une seule instruction, l'outil installe et configure automatiquement les dépendances d'un projet web (Tailwind CSS, shadcn/ui, ESLint, TypeScript, etc.) sans avoir à lancer plusieurs commandes npm i manuellement. L'écran affiche la liste des packages sélectionnés, la progression de l'installation et la confirmation de fin de setup.",
                 commentary: "Ce projet marque ma première expérience avec Python. J'ai appris le langage en autodidacte pour concevoir un outil concret : comprendre la syntaxe, les modules de la bibliothèque standard (argparse, json, os, subprocess), et les bonnes pratiques Python. Cette démarche d'apprentissage autonome d'un nouveau langage pour répondre à un besoin réel démontre ma capacité d'adaptation et ma curiosité technique.",
                 competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
                 media: { type: "image", sources: [DevFlowPlaceholder] },
@@ -132,7 +135,7 @@ export const univProjects: UnivProject[] = [
             {
                 id: "ransau-analyse",
                 title: "Analyse du site actuel et points de correction",
-                legend: "Capture du site actuel de Ransau Systeme montrant la page d'accueil avec la navigation, le hero section présentant l'activité de consulting/IA/logiciel, les boutons d'action et l'illustration 3D. On observe une base fonctionnelle mais avec des axes d'amélioration identifiés : manque de cohérence typographique, espacement irrégulier, absence de footer structuré, animations limitées et responsive à optimiser.",
+                legend: "Capture du site actuel de Ransau Systeme montrant la page d'accueil avec la navigation, le hero section présentant l'activité de consulting/IA/logiciel, les boutons d'action et l'illustration 3D. J'ai identifié plusieurs axes d'amélioration : manque de cohérence typographique, espacement irrégulier, absence de footer structuré, animations limitées et responsive à optimiser.",
                 commentary: "Cette phase d'analyse a été essentielle avant de commencer le développement. Elle m'a permis de dresser un audit UX/UI du site existant en identifiant les points à corriger : hiérarchie visuelle à renforcer, composants à harmoniser, interactions à enrichir. Ce travail d'analyse démontre ma capacité à évaluer un produit existant avec un regard critique et à formuler des préconisations d'amélioration concrètes avant de passer au développement.",
                 competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
                 media: { type: "image", sources: [RansauSysteme] },
@@ -164,7 +167,7 @@ export const univProjects: UnivProject[] = [
             {
                 id: "momentum-moodboard",
                 title: "Moodboard et direction artistique",
-                legend: "Planche d'inspiration (moodboard) réalisée pour définir l'univers visuel de MOMENTUM. On y retrouve des références à l'esthétique urbaine et nocturne, la typographie du projet (style Marathon), des captures de jeux de parkour en pixel art, des ambiances néon/cyberpunk et des textures architecturales industrielles.",
+                legend: "Planche d'inspiration (moodboard) réalisée pour définir l'univers visuel de MOMENTUM. J'y ai rassemblé des références à l'esthétique urbaine et nocturne, la typographie du projet (style Marathon), des captures de jeux de parkour en pixel art, des ambiances néon/cyberpunk et des textures architecturales industrielles.",
                 commentary: "Ce moodboard a servi de base à toute la direction artistique du projet. Il a permis à l'ensemble des 5 groupes de partager une vision commune de l'univers visuel : tons sombres, accents néon vert/violet, ambiance urbaine. Cette étape de recherche graphique est essentielle pour garantir la cohérence visuelle entre le jeu, le site web, la borne physique et la communication. Elle démontre ma capacité à mener une réflexion créative structurée en amont du développement.",
                 competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
                 media: { type: "image", sources: [MoodboardMomentum] },
@@ -204,38 +207,6 @@ export const univProjects: UnivProject[] = [
         ],
     },
     {
-        slug: "jeu-unity-3d",
-        title: "Jeu Unity 3D",
-        type: "SAE en groupe",
-        description: "Création d'un jeu 3D avec Unity en groupe dans le cadre de la formation MMI — modélisation de scènes, gestion des collisions, scripting C# et export web.",
-        longDescription: "Projet de groupe réalisé dans le cadre de la formation MMI. L'objectif était de concevoir et développer un jeu 3D complet avec Unity. Le jeu met en scène une boule dans un environnement coloré avec un système de collecte de pièces, un timer, des vies et un inventaire de pouvoirs. Le projet m'a initié aux bases du game development : modélisation de scènes 3D, gestion des collisions et de la physique, scripting en C#, interface utilisateur (HUD) et export vers le web.",
-        image: UnityGame,
-        link: "http://mmi23e10.mmi-troyes.fr/wr507d/",
-        tags: ["Jeu", "3D"],
-        year: "2024",
-        technologies: ["Unity", "C#", "3D", "WebGL"],
-        role: "Game Developer",
-        duration: "A remplir",
-        traces: [
-            {
-                id: "unity-jeu",
-                title: "Jeu 3D développé avec Unity",
-                legend: "Mockup du jeu Unity 3D sur un laptop montrant le gameplay : une boule violette dans un environnement 3D avec des collines, des sapins et un escalier. L'interface affiche un compteur de pièces (0/10), un timer (1:49), des coeurs de vie et une barre d'inventaire de pouvoirs. L'univers coloré et cartoon rappelle les jeux de plateforme.",
-                commentary: "Ce projet de groupe m'a permis de découvrir le développement de jeux vidéo avec Unity. J'ai appris à manipuler un moteur 3D, à scripter des mécaniques de jeu en C# (collecte d'objets, timer, système de vies, pouvoirs), à modéliser des scènes et à exporter le jeu sur le web via WebGL. C'est une compétence complémentaire au développement web qui enrichit ma compréhension des interactions utilisateur et de la 3D.",
-                competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
-                media: { type: "image", sources: [UnityGame] },
-            },
-            {
-                id: "unity-web",
-                title: "Jeu exporté et jouable sur le web",
-                legend: "Version web du jeu Unity 3D, jouable directement dans le navigateur grâce à l'export WebGL. Le joueur peut contrôler la boule, collecter des pièces et utiliser des pouvoirs dans un temps imparti.",
-                commentary: "L'export WebGL du jeu démontre la capacité à rendre un projet Unity accessible sur le web sans installation. Cette étape technique implique l'optimisation des assets, la gestion de la mémoire et la compatibilité navigateur — des compétences qui font le pont entre le game development et le développement web.",
-                competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
-                media: { type: "link", sources: ["http://mmi23e10.mmi-troyes.fr/wr507d/"] },
-            },
-        ],
-    },
-    {
         slug: "portfolio-3d",
         title: "Portfolio 3D",
         type: "Projet personnel",
@@ -247,12 +218,12 @@ export const univProjects: UnivProject[] = [
         year: "2024",
         technologies: ["Unity", "C#", "3D", "WebGL"],
         role: "Développeur — Projet personnel",
-        duration: "A remplir",
+        duration: "1 mois",
         traces: [
             {
                 id: "portfolio3d-jeu",
                 title: "Portfolio 3D interactif",
-                legend: "Capture du portfolio 3D réalisé avec Unity : un personnage astronaute sur une planète ('Planète Portfolio') dans un environnement spatial. On voit le nom 'Jean Michel Le', un compteur '0/7 découvertes', un drapeau et des objets 3D flottants (cristaux, hexagones). Le joueur explore la planète pour découvrir les 7 projets du portfolio.",
+                legend: "Capture du portfolio 3D réalisé avec Unity : un personnage astronaute sur une planète ('Planète Portfolio') dans un environnement spatial. L'écran affiche mon nom 'Jean Michel Le', un compteur '0/7 découvertes', un drapeau et des objets 3D flottants (cristaux, hexagones). Le visiteur explore la planète pour découvrir les 7 projets du portfolio.",
                 commentary: "Ce portfolio 3D est une manière originale de présenter mes projets : au lieu d'un site classique, l'utilisateur contrôle un personnage qui explore une planète et découvre chaque projet en interagissant avec des éléments 3D. Ce travail démontre ma capacité à utiliser Unity pour créer une expérience interactive et immersive, allant au-delà du simple développement web. La conception du gameplay (exploration, collecte de découvertes) montre aussi ma compréhension du game design.",
                 competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
                 media: { type: "image", sources: [Portfolio3D] },
@@ -264,7 +235,7 @@ export const univProjects: UnivProject[] = [
         title: "Spotify Stats",
         type: "Projet personnel",
         description: "Application web de statistiques musicales — un Spotify Wrapped disponible toute l'année. Connexion OAuth 2.0, top artistes/titres, filtres par période et export en image.",
-        longDescription: "Spotify propose Spotify Wrapped pour voir ses stats d'écoute, mais seulement une fois par an en décembre. Je me suis dit : pourquoi attendre un an ? J'ai donc créé une application qui permet de voir ses statistiques à tout moment. L'utilisateur se connecte avec son compte Spotify via OAuth 2.0 — c'est sécurisé, je ne vois jamais son mot de passe. On peut voir son Top 5 artistes et Top 5 titres, son genre préféré et son temps d'écoute, filtrer par période (4 semaines, 6 mois, ou depuis toujours) et exporter ses stats en image pour les partager sur les réseaux. Côté technique, le plus gros défi était l'authentification OAuth — gérer les tokens et leur expiration. J'ai aussi dû convertir les images en Base64 pour l'export, à cause des problèmes de CORS.",
+        longDescription: "Spotify propose Spotify Wrapped pour voir ses stats d'écoute, mais seulement une fois par an en décembre. Je me suis dit : pourquoi attendre un an ? J'ai donc créé une application qui permet de voir ses statistiques à tout moment. J'ai intégré une connexion via OAuth 2.0 — sécurisée, je ne vois jamais le mot de passe de l'utilisateur. J'ai développé l'affichage du Top 5 artistes et Top 5 titres, du genre préféré et du temps d'écoute, avec des filtres par période (4 semaines, 6 mois, ou depuis toujours) et un export des stats en image pour les partager sur les réseaux. Côté technique, le plus gros défi était l'authentification OAuth — gérer les tokens et leur expiration. J'ai aussi dû convertir les images en Base64 pour l'export, à cause des problèmes de CORS.",
         image: SpotifyStats,
         link: "https://api-spotify-zeta.vercel.app/dashboard",
         tags: ["API", "Web", "Music"],
@@ -276,7 +247,7 @@ export const univProjects: UnivProject[] = [
             {
                 id: "spotify-connexion",
                 title: "Page de connexion OAuth 2.0 Spotify",
-                legend: "Page d'accueil de l'application Spotify Stats avec le bouton de connexion via Spotify. On voit l'interface épurée avec le logo Spotify, le titre 'Spotify Stats', le sous-titre 'Découvrez vos statistiques d'écoute' et le bouton vert 'Se connecter avec Spotify' sur un fond sombre avec un cercle lumineux vert.",
+                legend: "Page d'accueil de l'application Spotify Stats avec le bouton de connexion via Spotify. J'ai conçu une interface épurée avec le logo Spotify, le titre 'Spotify Stats', le sous-titre 'Découvrez vos statistiques d'écoute' et le bouton vert 'Se connecter avec Spotify' sur un fond sombre avec un cercle lumineux vert.",
                 commentary: "Cette page illustre l'intégration de l'authentification OAuth 2.0 de Spotify. L'utilisateur se connecte avec son propre compte Spotify de manière sécurisée — l'application ne voit jamais son mot de passe, elle reçoit uniquement un token d'accès temporaire. La gestion des tokens (obtention, rafraîchissement, expiration) a été le principal défi technique du projet. Cette compétence en authentification sécurisée est très demandée en entreprise.",
                 competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
                 media: { type: "image", sources: [SpotifyStats] },
@@ -284,10 +255,26 @@ export const univProjects: UnivProject[] = [
             {
                 id: "spotify-dashboard",
                 title: "Dashboard des statistiques d'écoute",
-                legend: "A remplir — ajoute une capture du dashboard montrant le Top 5 artistes, Top 5 titres, genre préféré, temps d'écoute et les filtres par période (4 semaines / 6 mois / depuis toujours).",
+                legend: "Dashboard des statistiques d'écoute Spotify : 2h58min d'écoute totale, 43 artistes uniques, 50 titres différents, 29 albums, genre favori Rap. La section 'Artistes Similaires' propose Travis Scott, Don Toliver, ASAP Rocky, Metro Boomin et EsZeeKid. Le Top Artistes affiche les photos des 5 artistes les plus écoutés avec leur genre. L'interface est en dark mode avec un bouton 'Partager mon profil musical'.",
                 commentary: "Le dashboard est le coeur de l'application. Il consomme plusieurs endpoints de l'API Spotify pour agréger les données d'écoute et les présenter de manière claire. L'utilisateur peut filtrer par période et exporter ses stats en image. Pour l'export, j'ai dû résoudre un problème de CORS en convertissant les images d'artistes en Base64. Si c'était à refaire, j'ajouterais des graphiques pour visualiser l'évolution des écoutes dans le temps.",
                 competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
-                media: { type: "link", sources: ["https://api-spotify-zeta.vercel.app/dashboard"] },
+                media: { type: "image", sources: [SpotifyDashboard] },
+            },
+            {
+                id: "spotify-wrapped",
+                title: "Mode Wrapped — résumé musical animé",
+                legend: "Écran d'introduction du mode Wrapped de l'application : fond dégradé vert sombre avec une note de musique, le titre 'Ton Wrapped', le message personnalisé 'Salut Hoko ! Voici ton résumé musical.' et l'instruction 'Clique pour continuer'. Cette vue lance une expérience animée qui résume l'année musicale de l'utilisateur.",
+                commentary: "Le mode Wrapped est une fonctionnalité bonus qui reproduit l'expérience Spotify Wrapped avec mes propres données. J'ai conçu une interface animée en plein écran qui présente les stats sous forme de slides. Cela m'a permis de travailler sur des animations CSS/JS et de soigner l'expérience utilisateur au-delà d'un simple affichage de données.",
+                competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
+                media: { type: "image", sources: [SpotifyWrapped] },
+            },
+            {
+                id: "spotify-carte",
+                title: "Carte mondiale des origines d'artistes",
+                legend: "Vue 'Carte des origines' de l'application : une carte du monde en dark mode avec des points verts indiquant les pays d'origine des artistes écoutés. Stats : 5 pays représentés, 20 artistes localisés, pays #1 les États-Unis 🇺🇸, 30 artistes analysés au total. Les bulles vertes sont proportionnelles au nombre d'artistes par région.",
+                commentary: "Cette fonctionnalité originale consomme une API tierce pour récupérer le pays d'origine de chaque artiste, puis affiche les données sur une carte interactive. Ce n'était pas prévu dans le scope initial — je l'ai ajoutée car je trouvais l'idée créative. Cela démontre ma capacité à enrichir un projet avec des fonctionnalités inattendues et à intégrer plusieurs sources de données.",
+                competencies: ["Développer — Développer pour le web et les médias numériques", "Entreprendre — Entreprendre dans le secteur du numérique"],
+                media: { type: "image", sources: [SpotifyCarte] },
             },
         ],
     },
